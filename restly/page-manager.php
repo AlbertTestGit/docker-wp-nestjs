@@ -13,7 +13,7 @@ $jwtData = [
     "username" => $user_login,
     "passHash" => $user_pass,
 ];
-$JWT_URL = 'https://dev-license.db.timal.kz/api/wordpress/jwt';
+$JWT_URL = 'api:3000/api/wordpress/jwt';
 
 $jwtData = json_encode($jwtData);
 $curl = curl_init($JWT_URL);
@@ -29,7 +29,7 @@ $json_response = curl_exec($curl);
 $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 if ( $status != 201 ) {
-    die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
+    die("Error: call to URL $curl failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
 }
 
 
@@ -126,7 +126,7 @@ if(isset($_POST['sendT'])) {
 
     $selectAmount =$_POST['amount'];
 
-    $url = 'https://dev-license.db.timal.kz/api/licenses';
+    $url = 'api:3000/api/licenses';
   
 
     $data['swid'] =  $selectPlugin;

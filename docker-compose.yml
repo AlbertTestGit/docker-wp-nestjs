@@ -23,8 +23,8 @@ services:
       - JWT_SECRET=vZiXOo3r7IgFtLh3TVtuiKxVtXfqMlAs
       - LICENSE_URL=http://192.168.10.46:10100
       - WOOCOMMERCE_API_URL=https://dev-shop.db.timal.kz
-      - WOOCOMMERCE_CK=ck_f77c9a1e3b458aa7e59ebf5e389db6cb9b86f9a9
-      - WOOCOMMERCE_CS=cs_6e6c0ef96d404298c025fb0f9fcb00ea1c8c1350
+      - WOOCOMMERCE_CK=ck_4e54f68495be25e0d650b4d1c13b3973ef557cf7
+      - WOOCOMMERCE_CS=cs_96dfcc7ce2c979c57b0aefc426d14938f40ffc12
 
   db:
     container_name: postgres

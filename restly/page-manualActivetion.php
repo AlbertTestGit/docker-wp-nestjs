@@ -14,7 +14,7 @@ $jwtData = [
     "username" => $user_login,
     "passHash" => $user_pass,
 ];
-$JWT_URL = 'https://dev-license.db.timal.kz/api/wordpress/jwt';
+$JWT_URL = 'api:3000/api/wordpress/jwt';
 
 $jwtData = json_encode($jwtData);
 $curl = curl_init($JWT_URL);
@@ -43,7 +43,7 @@ $jwtForAction = $jwtForAction['access_token'];
 
 if(isset($_GET['sendButton'])) {
     $token = $_GET['token'];
-    $url = 'api/api/licenses/manual-activation';
+    $url = 'api:3000/api/licenses/manual-activation';
     $authorization = "Authorization: Bearer " . $jwtForAction;
  
 
@@ -51,7 +51,7 @@ if(isset($_GET['sendButton'])) {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $jwtForAction));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_URL, 'https://dev-license.db.timal.kz/api/licenses/manual-activation?token=' . $token);
+    curl_setopt($ch, CURLOPT_URL, 'api:3000/api/licenses/manual-activation?token=' . $token);
 
 
     $otvetServer = curl_exec($ch);

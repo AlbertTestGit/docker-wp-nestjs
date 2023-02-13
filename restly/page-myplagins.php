@@ -6,7 +6,7 @@ get_header();
 $current_user = wp_get_current_user();
 $user_ID = $current_user->ID;
 
-$url = 'https://dev-license.db.timal.kz/api/licenses';
+$url = 'api:3000/api/licenses';
 
 
 
